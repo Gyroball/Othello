@@ -13,7 +13,7 @@ int main()
     string reserve[64];
     int cpt=0;
     int cpt2=0;
-    int cp3=5;
+    int cp3=4;
     int compteursimu;
     int init;
     int test1;
@@ -21,7 +21,7 @@ int main()
    cout<<"\t\t\tOthello\n"<< endl;
    cout<<"\tCode par   Kenneth Folly"<< endl;
    cout<<"\n\t_________________________________________"<< endl;
-   cout<<"\n\n\n\nNouvelle Partie : 1\nNiveau2: 2\n1vs1 : 3\nVoir les scores : 4\n"<< endl;
+   cout<<"\n\n\n\nNouvelle Partie : 1\nNiveau2: 2\n1vs1 : 3\n4:Charger une partie\n"<< endl;
 
    cin>>init;
     for(int i=0;i<64;i++)
@@ -54,6 +54,7 @@ int main()
     ordi(game,cpt2);
     fin2(game);
     game.afficheplateau();
+    sauvegarde(game);
 //test1=test(game,3,3);
            //cout<< test1;
     }
@@ -122,6 +123,36 @@ break;
 //test1=test(game,3,3);
            //cout<< test1;
     }
+break;
+    case 4:
+        system("cls");
+        charger(game);
+        game.afficheplateau();
+        while(victoire!=true)
+    {
+    J1(game,cpt);
+        for(int i=1;i<7;i++)
+    {
+        for(int j=1;j<7;j++)
+        {
+            renvoi(game,i,j);
+
+        }
+    }
+    system("PAUSE");
+    system("cls");
+    fin(game);
+    game.afficheplateau();
+    system("PAUSE");
+    system("cls");
+    ordi(game,cpt2);
+    fin2(game);
+    game.afficheplateau();
+    sauvegarde(game);
+//test1=test(game,3,3);
+           //cout<< test1;
+    }
+
 }
 return 0;
 }

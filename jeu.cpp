@@ -14,6 +14,65 @@ void Locate(int x,int y)
     C.Y=(SHORT)y;
     SetConsoleCursorPosition(H,C);
 }
+void sauvegarde(Plateau &plateau)
+{
+    ofstream fichier("text.txt", ios::out | ios::trunc);
+    if(fichier)
+    {
+       for(int i=0;i<8;i++)
+    {
+        for(int j=0;j<8;j++)
+        {
+            fichier<<plateau.m_plateau[i][j].getType();
+        }
+        fichier<<endl;
+    }
+        fichier.close();
+    }
+    else
+        cerr<<"ouverture du fichier impossible"<<endl;
+}
+
+void charger(Plateau &plateau)
+{
+    ifstream fichier("text.txt", ios::in);
+    string pion;
+    string j1 = " X ";
+    string ordi = " O ";
+    string vide= " . ";
+
+        if(fichier)
+        {
+                for(int i=0;i<8;i++)
+    {
+        for(int j=0;j<8;j++)
+        {
+            fichier >> pion;
+            if (pion=="X")
+            {
+
+            plateau.m_plateau[i][j].setType(j1);
+
+            }
+            else if(pion=="O")
+            {
+                plateau.m_plateau[i][j].setType(ordi);
+            }
+            else
+            {
+                plateau.m_plateau[i][j].setType(vide);
+            }
+        }
+
+    }
+
+
+
+                fichier.close();
+        }
+        else
+                cerr << "ouverture du fichier impossible" << endl;
+}
  /*void bouger()
  {
      bool quit(false);
@@ -64,6 +123,12 @@ void Locate(int x,int y)
 
      cout<<"Ligne"<< endl;
      cin>>a;
+     if (a==9)
+     {
+         sauvegarde(plateau);
+         cout<<"sauvegarde faite"<<endl;
+         cin>>a;
+     }
      a--;
      cout<<"Colonnes"<< endl;
      cin>> b;
@@ -92,6 +157,26 @@ void Locate(int x,int y)
              while(plateau.m_plateau[a][b+1].getType()==" O ")
             {
                 plateau.m_plateau[a][b+1].setType(q);
+                cpt++;
+            }
+             while(plateau.m_plateau[a-1][b-1].getType()==" O ")
+            {
+                plateau.m_plateau[a-1][b-1].setType(q);
+                cpt++;
+            }
+             while(plateau.m_plateau[a-1][b+1].getType()==" O ")
+            {
+                plateau.m_plateau[a-1][b+1].setType(q);
+                cpt++;
+            }
+             while(plateau.m_plateau[a+1][b+1].getType()==" O ")
+            {
+                plateau.m_plateau[a+1][b+1].setType(q);
+                cpt++;
+            }
+             while(plateau.m_plateau[a+1][b-1].getType()==" O ")
+            {
+                plateau.m_plateau[a+1][b-1].setType(q);
                 cpt++;
             }
             /* if(((plateau.m_plateau[a-1][b].getType()==" O ")&& (plateau.m_plateau[a-2][b].getType()==" X ")))
@@ -215,18 +300,42 @@ void J2(Plateau& plateau,int cpt)
             while(plateau.m_plateau[a-1][b].getType()==" X ")
             {
                 plateau.m_plateau[a-1][b].setType(q);
+                cpt++;
             }
              while(plateau.m_plateau[a][b-1].getType()==" X ")
             {
                 plateau.m_plateau[a][b-1].setType(q);
+                cpt++;
             }
              while(plateau.m_plateau[a+1][b].getType()==" X ")
             {
                 plateau.m_plateau[a+1][b].setType(q);
+                cpt++;
             }
              while(plateau.m_plateau[a][b+1].getType()==" X ")
             {
                 plateau.m_plateau[a][b+1].setType(q);
+                cpt++;
+            }
+             while(plateau.m_plateau[a-1][b-1].getType()==" X ")
+            {
+                plateau.m_plateau[a-1][b-1].setType(q);
+                cpt++;
+            }
+             while(plateau.m_plateau[a-1][b+1].getType()==" X ")
+            {
+                plateau.m_plateau[a-1][b+1].setType(q);
+                cpt++;
+            }
+             while(plateau.m_plateau[a+1][b+1].getType()==" X ")
+            {
+                plateau.m_plateau[a+1][b+1].setType(q);
+                cpt++;
+            }
+             while(plateau.m_plateau[a+1][b-1].getType()==" X ")
+            {
+                plateau.m_plateau[a+1][b-1].setType(q);
+                cpt++;
             }
             /* if(((plateau.m_plateau[a-1][b].getType()==" O ")&& (plateau.m_plateau[a-2][b].getType()==" X ")))
             {
@@ -286,6 +395,8 @@ if(cpt1==0)
   {
       cout<<"Le jeu est fini"<<endl;
       cout<<"J1 a win"<<endl;
+      cout<<"Score:"<<endl;
+      cout<<q++;
       exit(0);
 }
 }
@@ -353,25 +464,48 @@ void ordi(Plateau& plateau,int cpt2)
      }
 
             plateau.m_plateau[a][b].setType(q);
-            if(((plateau.m_plateau[a-1][b].getType()==" X ")&& (plateau.m_plateau[a-2][b].getType()==" O ")))
+          if(plateau.coupjouable2(a,b)==true)
+        {
+            plateau.m_plateau[a][b].setType(q);
+            while(plateau.m_plateau[a-1][b].getType()==" X ")
             {
                 plateau.m_plateau[a-1][b].setType(q);
-                cpt2++;
+
             }
-             if(((plateau.m_plateau[a][b-1].getType()==" X ")&& (plateau.m_plateau[a][b-2].getType()==" O ")))
+             while(plateau.m_plateau[a][b-1].getType()==" X ")
             {
                 plateau.m_plateau[a][b-1].setType(q);
-                cpt2++;
+
             }
-             if(((plateau.m_plateau[a+1][b].getType()==" X ")&& (plateau.m_plateau[a+2][b].getType()==" O ")))
+             while(plateau.m_plateau[a+1][b].getType()==" X ")
             {
                 plateau.m_plateau[a+1][b].setType(q);
-                cpt2++;
+
             }
-             if(((plateau.m_plateau[a][b+1].getType()==" x ")&& (plateau.m_plateau[a][b+2].getType()==" O ")))
+             while(plateau.m_plateau[a][b+1].getType()==" X ")
             {
                 plateau.m_plateau[a][b+1].setType(q);
-                cpt2++;
+
+            }
+             while(plateau.m_plateau[a-1][b-1].getType()==" X ")
+            {
+                plateau.m_plateau[a-1][b-1].setType(q);
+
+            }
+             while(plateau.m_plateau[a-1][b+1].getType()==" X ")
+            {
+                plateau.m_plateau[a-1][b+1].setType(q);
+
+            }
+             while(plateau.m_plateau[a+1][b+1].getType()==" X ")
+            {
+                plateau.m_plateau[a+1][b+1].setType(q);
+
+            }
+             while(plateau.m_plateau[a+1][b-1].getType()==" X ")
+            {
+                plateau.m_plateau[a+1][b-1].setType(q);
+
             }
 
 for(int i=1;i<8;i++)
@@ -392,7 +526,7 @@ if(c3==0)
     exit(0);
 } */
 }
-
+ }
 int test(Plateau plateau,int a,int b)
 {
 
@@ -615,18 +749,18 @@ void IA_jouer(Plateau& plateau,int profondeur)
      int i,j;
      string q= " O ";
      string dz=" . ";
-cout<<"b1";
+
      for(i=1;i<8;i++)
      {
           for(j=1;j<8;j++)
           {
                 if((plateau.m_plateau[i][j].getType() ==" . ")&&(coupjouable2(plateau,i,j)==true ))
                 {
-                     cout<<"b2";
+
                      plateau.m_plateau[i][j].setType(q);
-                      cout<<"b3";
+
                       tmp = Min(plateau,profondeur-1);
-cout<<"b4";
+
                       if(tmp > max)
                       {
                             max = tmp;

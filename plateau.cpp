@@ -1,5 +1,25 @@
 #include "plateau.h"
+
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <windows.h>
+#include <tchar.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include<string>
+#include<fstream>
+#include <conio.h>
+#include <dos.h>
+#include<iostream>
 using namespace std;
+
+void color(int t,int f)
+{
+        HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
+            SetConsoleTextAttribute(H,f*16+t);
+}
+
 Plateau::Plateau()
 {
 
@@ -33,11 +53,20 @@ void Plateau:: afficheplateau()
         for(int j=0;j<8;j++)
 
         {
-
-            cout<<m_plateau[i][j].getType()<<" ";
+            if (m_plateau[i][j].getType()==" O ")
+            {
+                color(15,2);
+                cout<<m_plateau[i][j].getType()<<" ";
+            }
+            else
+            {
+                color(0,2);
+                cout<<m_plateau[i][j].getType()<<" ";
+            }
         }
     cout<< endl;
     }
+    color(15,0);
 
 }
 
@@ -48,7 +77,7 @@ void Plateau::modifCase(int x,int y, Piece p)
 Piece* Plateau::retourcase(int x,int y)
 {
 
-    Piece* p=nullptr;
+    Piece* p=0;
     if(EstSurPlateau(x,y)==true)
     return &m_plateau[x][y];
     else
