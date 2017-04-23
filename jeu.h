@@ -20,6 +20,8 @@ void Pousse1(Plateau& plateau);
 void Regles();*/
 void J1(Plateau& plateau,int cpt);
 void J2(Plateau& plateau,int cpt);
+void sauvegarde(Plateau& plateau);
+void charger(Plateau& plateau);
 bool verifpose2(int a,int b,Plateau plateau);
 void ordi(Plateau& plateau,int cpt2);
 void fin(Plateau& plateau);
