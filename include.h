@@ -10,9 +10,4 @@
 #include <tchar.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include<string>
-#include<fstream>
-#include <conio.h>
-#include <dos.h>
-#include<iostream>
 #endif // INCLUDE_H_INCLUDED

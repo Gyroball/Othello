@@ -14,65 +14,6 @@ void Locate(int x,int y)
     C.Y=(SHORT)y;
     SetConsoleCursorPosition(H,C);
 }
-void sauvegarde(Plateau &plateau)
-{
-    ofstream fichier("text.txt", ios::out | ios::trunc);
-    if(fichier)
-    {
-       for(int i=0;i<8;i++)
-    {
-        for(int j=0;j<8;j++)
-        {
-            fichier<<plateau.m_plateau[i][j].getType();
-        }
-        fichier<<endl;
-    }
-        fichier.close();
-    }
-    else
-        cerr<<"ouverture du fichier impossible"<<endl;
-}
-
-void charger(Plateau &plateau)
-{
-    ifstream fichier("text.txt", ios::in);
-    string pion;
-    string j1 = " X ";
-    string ordi = " O ";
-    string vide= " . ";
-
-        if(fichier)
-        {
-                for(int i=0;i<8;i++)
-    {
-        for(int j=0;j<8;j++)
-        {
-            fichier >> pion;
-            if (pion=="X")
-            {
-
-            plateau.m_plateau[i][j].setType(j1);
-
-            }
-            else if(pion=="O")
-            {
-                plateau.m_plateau[i][j].setType(ordi);
-            }
-            else
-            {
-                plateau.m_plateau[i][j].setType(vide);
-            }
-        }
-
-    }
-
-
-
-                fichier.close();
-        }
-        else
-                cerr << "ouverture du fichier impossible" << endl;
-}
  /*void bouger()
  {
      bool quit(false);
@@ -123,12 +64,6 @@ void charger(Plateau &plateau)
 
      cout<<"Ligne"<< endl;
      cin>>a;
-     if (a==9)
-     {
-         sauvegarde(plateau);
-         cout<<"sauvegarde faite"<<endl;
-         cin>>a;
-     }
      a--;
      cout<<"Colonnes"<< endl;
      cin>> b;
