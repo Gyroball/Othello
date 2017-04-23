@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1492875524 source:e:\othello\main.cpp
+	<iostream>
+	"include.h"
+	"stdlib.h"
+
+1491402680 source:e:\othello\piece.cpp
+	"piece.h"
+
+1492806212 source:e:\othello\plateau.cpp
+	"plateau.h"
+
+1492846720 e:\othello\plateau.h
+	"piece.h"
+
+1491401096 e:\othello\piece.h
+	<iostream>
+
+1492846828 e:\othello\include.h
+	"plateau.h"
+	"piece.h"
+	"jeu.h"
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+	<tchar.h>
+	<stdio.h>
+	<stdbool.h>
+
+1492877376 source:e:\othello\jeu.cpp
+	"include.h"
+
+1492878452 e:\othello\jeu.h
+
+1491406280 source:i:\othello\piece.cpp
+	"piece.h"
+
+1491404696 i:\othello\piece.h
+	<iostream>
+
+1492809812 source:i:\othello\plateau.cpp
+	"plateau.h"
+
+1492809818 i:\othello\plateau.h
+	"piece.h"
+
+1492816020 source:i:\othello\jeu.cpp
+	"include.h"
+
+1491943920 i:\othello\include.h
+	"plateau.h"
+	"piece.h"
+	"jeu.h"
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+
+1492815760 i:\othello\jeu.h
+
+1492815830 source:i:\othello\main.cpp
+	<iostream>
+	"include.h"
+	"stdlib.h"
+	<iostream>
+
