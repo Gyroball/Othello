@@ -54,6 +54,7 @@ int main()
     ordi(game,cpt2);
     fin2(game);
     game.afficheplateau();
+    sauvegarde(game);
 //test1=test(game,3,3);
            //cout<< test1;
     }
@@ -124,6 +125,33 @@ break;
     }
 break;
     case 4:
+        system("cls");
+        charger(game);
+        game.afficheplateau();
+        while(victoire!=true)
+    {
+    J1(game,cpt);
+        for(int i=1;i<7;i++)
+    {
+        for(int j=1;j<7;j++)
+        {
+            renvoi(game,i,j);
+
+        }
+    }
+    system("PAUSE");
+    system("cls");
+    fin(game);
+    game.afficheplateau();
+    system("PAUSE");
+    system("cls");
+    ordi(game,cpt2);
+    fin2(game);
+    game.afficheplateau();
+    sauvegarde(game);
+//test1=test(game,3,3);
+           //cout<< test1;
+    }
 
 }
 return 0;
