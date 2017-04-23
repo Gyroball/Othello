@@ -8,10 +8,13 @@ using namespace std;
 int main()
 {
      Plateau game;
+
     bool victoire=false;
     string reserve[64];
     int cpt=0;
     int cpt2=0;
+    int cp3=5;
+    int compteursimu;
     int init;
     int test1;
     cout<<"\t_________________________________________"<< endl;
@@ -57,7 +60,31 @@ int main()
 break;
     case 2:
         system("cls");
-        cout<<"A faire"<<endl;
+         system("cls");
+    game.afficheplateau();
+    while(victoire!=true)
+    {
+    J1(game,cpt);
+        for(int i=1;i<7;i++)
+    {
+        for(int j=1;j<7;j++)
+        {
+            renvoi(game,i,j);
+
+        }
+    }
+    system("PAUSE");
+    system("cls");
+    fin(game);
+    game.afficheplateau();
+    system("PAUSE");
+    system("cls");
+    simulation(game,compteursimu);
+    IA_jouer(game,cp3);
+    //ordi(game,cpt2);
+    //fin2(game);
+    game.afficheplateau();
+    }
         break;
     case 3:
          system("cls");
