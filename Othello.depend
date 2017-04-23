@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1492875524 source:e:\othello\main.cpp
+1492848698 source:e:\othello\main.cpp
 	<iostream>
 	"include.h"
 	"stdlib.h"
@@ -28,10 +28,10 @@
 	<stdio.h>
 	<stdbool.h>
 
-1492877376 source:e:\othello\jeu.cpp
+1492849386 source:e:\othello\jeu.cpp
 	"include.h"
 
-1492878452 e:\othello\jeu.h
+1492847128 e:\othello\jeu.h
 
 1491406280 source:i:\othello\piece.cpp
 	"piece.h"
