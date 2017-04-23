@@ -32,5 +32,10 @@ bool coupjouable2(Plateau plateau,int a,int b);
 //void bouger();
 void Locate(int x,int y);
 void Color(int flags);
-
+int renvoisimu(Plateau plateau, int a ,int b);
+ void simulation(Plateau plateau,int cpt);
+void IA_jouer(Plateau& plateau,int profondeur);
+int Max(Plateau plateau,int profondeur);
+int Min(Plateau plateau,int profondeur);
+int eval(Plateau plateau);
 #endif // JEU_H_INCLUDED
