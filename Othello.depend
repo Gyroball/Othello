@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1492848698 source:e:\othello\main.cpp
+1492953768 source:e:\othello\main.cpp
 	<iostream>
 	"include.h"
 	"stdlib.h"
@@ -28,10 +28,10 @@
 	<stdio.h>
 	<stdbool.h>
 
-1492849386 source:e:\othello\jeu.cpp
+1492959282 source:e:\othello\jeu.cpp
 	"include.h"
 
-1492847128 e:\othello\jeu.h
+1492878452 e:\othello\jeu.h
 
 1491406280 source:i:\othello\piece.cpp
 	"piece.h"
@@ -62,5 +62,107 @@
 	<iostream>
 	"include.h"
 	"stdlib.h"
+	<iostream>
+
+1491406280 source:c:\users\thomas\desktop\othello4\piece.cpp
+	"piece.h"
+
+1491404696 c:\users\thomas\desktop\othello4\piece.h
+	<iostream>
+
+1492967294 source:c:\users\thomas\desktop\othello4\plateau.cpp
+	"plateau.h"
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+	<tchar.h>
+	<stdio.h>
+	<stdbool.h>
+	<string>
+	<fstream>
+	<conio.h>
+	<dos.h>
+	<iostream>
+
+1492850320 c:\users\thomas\desktop\othello4\plateau.h
+	"piece.h"
+
+1492966548 source:c:\users\thomas\desktop\othello4\main.cpp
+	<iostream>
+	"include.h"
+	"stdlib.h"
+
+1492966548 c:\users\thomas\desktop\othello4\include.h
+	"plateau.h"
+	"piece.h"
+	"jeu.h"
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+	<tchar.h>
+	<stdio.h>
+	<stdbool.h>
+	<string>
+	<fstream>
+	<conio.h>
+	<dos.h>
+	<iostream>
+
+1492966548 c:\users\thomas\desktop\othello4\jeu.h
+
+1492966630 source:c:\users\thomas\desktop\othello4\jeu.cpp
+	"include.h"
+
+1492963030 source:c:\users\foly\desktop\othello4\jeu.cpp
+	"include.h"
+
+1492962948 c:\users\foly\desktop\othello4\include.h
+	"plateau.h"
+	"piece.h"
+	"jeu.h"
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+	<tchar.h>
+	<stdio.h>
+	<stdbool.h>
+	<string>
+	<fstream>
+	<conio.h>
+	<dos.h>
+	<iostream>
+
+1492846720 c:\users\foly\desktop\othello4\plateau.h
+	"piece.h"
+
+1491401096 c:\users\foly\desktop\othello4\piece.h
+	<iostream>
+
+1492962948 c:\users\foly\desktop\othello4\jeu.h
+
+1492966707 source:c:\users\foly\desktop\othello4\main.cpp
+	<iostream>
+	"include.h"
+	"stdlib.h"
+
+1491402680 source:c:\users\foly\desktop\othello4\piece.cpp
+	"piece.h"
+
+1492963694 source:c:\users\foly\desktop\othello4\plateau.cpp
+	"plateau.h"
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+	<tchar.h>
+	<stdio.h>
+	<stdbool.h>
+	<string>
+	<fstream>
+	<conio.h>
+	<dos.h>
 	<iostream>
 
